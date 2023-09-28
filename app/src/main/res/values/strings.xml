@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">OnlineShop</string>
+
+    <string name="home">Home</string>
+    <string name="products">Products</string>
+    <string name="blog">Blog</string>
+    <string name="basket">Basket</string>
 </resources>
