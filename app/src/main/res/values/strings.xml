@@ -5,4 +5,11 @@
     <string name="products">Products</string>
     <string name="blog">Blog</string>
     <string name="basket">Basket</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="about">About</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">(Username)</string>
 </resources>
