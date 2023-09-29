@@ -35,6 +35,13 @@
             android:layout_height="match_parent"
             android:paddingTop="60dp">
 
+            <FrameLayout
+                android:id="@+id/mainFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+
         </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
