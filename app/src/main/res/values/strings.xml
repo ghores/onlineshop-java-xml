@@ -12,4 +12,5 @@
     <string name="about">About</string>
     <string name="full_name">Full Name</string>
     <string name="username">(Username)</string>
+    <string name="product_category">Product Category</string>
 </resources>

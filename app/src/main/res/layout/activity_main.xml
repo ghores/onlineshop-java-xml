@@ -13,18 +13,18 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:elevation="0dp"
-            android:outlineProvider="none"
-            android:outlineSpotShadowColor="@android:color/transparent"
             android:outlineAmbientShadowColor="@android:color/transparent"
-            android:layout_height="wrap_content">
+            android:outlineProvider="none"
+            android:outlineSpotShadowColor="@android:color/transparent">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBAr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="0dp"
                 android:background="@color/white"
+                android:elevation="0dp"
                 app:navigationIcon="@drawable/baseline_menu_24"
                 app:title="@string/app_name" />
 
@@ -33,7 +33,8 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="60dp">
+            android:paddingTop="60dp"
+            android:paddingBottom="55dp">
 
             <FrameLayout
                 android:id="@+id/mainFrame"
@@ -48,19 +49,19 @@
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bottom_nav_shape"
             android:layout_gravity="bottom"
+            android:background="@drawable/bottom_nav_shape"
             app:menu="@menu/bottom_nav_menu" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
-        app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/drawer_header_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start|left">
+        android:layout_gravity="start|left"
+        app:headerLayout="@layout/drawer_header_layout"
+        app:menu="@menu/drawer_menu">
 
     </com.google.android.material.navigation.NavigationView>
 
