@@ -13,4 +13,6 @@
     <string name="full_name">Full Name</string>
     <string name="username">(Username)</string>
     <string name="product_category">Product Category</string>
+    <string name="new_products">New Products</string>
+    <string name="popular_products">Popular Products</string>
 </resources>

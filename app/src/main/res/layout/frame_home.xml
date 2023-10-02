@@ -15,4 +15,28 @@
         android:id="@+id/mainRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/new_products" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newProductsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/popular_products" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popularProductsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
