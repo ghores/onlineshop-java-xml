@@ -39,4 +39,9 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //Slide Show
+    implementation("com.github.smarteist:autoimageslider:1.4.0")
+    //Picasso
+    implementation("com.squareup.picasso:picasso:2.8")
 }

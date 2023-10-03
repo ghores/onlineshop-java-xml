@@ -16,8 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.ProductAdapter;
 import com.example.onlineshop.adapters.ProductCategoryAdapter;
+import com.example.onlineshop.adapters.SliderAdapter;
 import com.example.onlineshop.models.Product;
 import com.example.onlineshop.models.ProductCategory;
+import com.example.onlineshop.models.SliderItem;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +33,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView popularProductRecyclerView;
     private List<ProductCategory> productCategories;
     private List<Product> products;
+    private SliderView sliderView;
 
     public HomeFragment(Activity activity) {
         this.activity = activity;
@@ -52,8 +56,15 @@ public class HomeFragment extends Fragment {
         newProductsRecyclerView.setAdapter(new ProductAdapter(activity, products));
         newProductsRecyclerView.setLayoutManager(new GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false));
 
-        popularProductRecyclerView.setAdapter(new ProductAdapter(activity,products));
+        popularProductRecyclerView.setAdapter(new ProductAdapter(activity, products));
         popularProductRecyclerView.setLayoutManager(new GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false));
+
+        SliderAdapter sliderAdapter = new SliderAdapter(activity);
+        sliderAdapter.addItem(new SliderItem("Shopping 1","https://imgscf.slidemembers.com/docs/1/1/259/shopping_slide_ppt_258349.jpg"));
+        sliderAdapter.addItem(new SliderItem("Shopping 2","https://imgscf.slidemembers.com/docs/1/1/259/shopping_slide_ppt_258355.jpg"));
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.setScrollTimeInSec(3);
+        sliderView.startAutoCycle();
 
     }
 
@@ -61,6 +72,7 @@ public class HomeFragment extends Fragment {
         mainRecyclerView = view.findViewById(R.id.mainRecyclerView);
         newProductsRecyclerView = view.findViewById(R.id.newProductsRecyclerView);
         popularProductRecyclerView = view.findViewById(R.id.popularProductsRecyclerView);
+        sliderView = view.findViewById(R.id.imageSlider);
     }
 
     private void fillMockDataList() {
