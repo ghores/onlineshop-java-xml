@@ -15,4 +15,5 @@
     <string name="product_category">Product Category</string>
     <string name="new_products">New Products</string>
     <string name="popular_products">Popular Products</string>
+    <string name="twice_back">Please press BACK again to exit</string>
 </resources>
