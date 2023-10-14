@@ -13,4 +13,5 @@
     <color name="colorEEE">#EEEEEE</color>
     <color name="colorE6">#E6E6E6</color>
     <color name="colorLight">#B7FFFFFF</color>
+    <color name="colorWhite">#fff</color>
 </resources>
