@@ -15,6 +15,12 @@
     <string name="product_category">Product Category</string>
     <string name="new_products">New Products</string>
     <string name="popular_products">Popular Products</string>
+    <string name="new_filter">New</string>
+    <string name="cheap_products">Cheap Products</string>
+    <string name="expensive_products">Expensive Products</string>
+    <string name="popular_filter">Popular</string>
+    <string name="expensive_filter">Expensive</string>
+    <string name="cheap_filter">Cheap</string>
     <string name="twice_back">Please press BACK again to exit</string>
     <string name="size">Size</string>
     <string name="color">Color</string>

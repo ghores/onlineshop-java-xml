@@ -116,6 +116,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 String result = "Selected Items : \nColor : " + selectedColor.getName() + "\nSize : " + selectedSize.getName();
                 Toast.makeText(ProductDetailsActivity.this, result, Toast.LENGTH_LONG).show();
                 finish();
+                ProductDetailsActivity.this.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }
         });
         //endregion
