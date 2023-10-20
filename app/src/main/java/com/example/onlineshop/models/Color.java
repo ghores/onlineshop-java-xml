@@ -2,13 +2,23 @@ package com.example.onlineshop.models;
 
 public class Color {
 
+    private long id;
     private String name;
     private String value;
 
     public Color() {
     }
 
-    public Color(String name, String value) {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Color(long id, String name, String value) {
+        this.id = id;
         this.name = name;
         this.value = value;
     }

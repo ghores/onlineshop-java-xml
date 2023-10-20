@@ -135,24 +135,24 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private void fillColors() {
         colors = new ArrayList<>();
-        colors.add(new Color("Pink", "#f78fb3"));
-        colors.add(new Color("Blue", "#546de5"));
-        colors.add(new Color("Aqua", "#3dc1d3"));
-        colors.add(new Color("Purple", "#574b90"));
+        colors.add(new Color(1,"Pink", "#f78fb3"));
+        colors.add(new Color(2,"Blue", "#546de5"));
+        colors.add(new Color(3,"Aqua", "#3dc1d3"));
+        colors.add(new Color(4,"Purple", "#574b90"));
     }
 
     private void fillSizes() {
         sizes = new ArrayList<>();
-        sizes.add(new Size("38"));
-        sizes.add(new Size("39"));
-        sizes.add(new Size("40"));
-        sizes.add(new Size("41"));
-        sizes.add(new Size("42"));
-        sizes.add(new Size("43"));
-        sizes.add(new Size("44"));
-        sizes.add(new Size("45"));
-        sizes.add(new Size("46"));
-        sizes.add(new Size("47"));
-        sizes.add(new Size("48"));
+        sizes.add(new Size(1,"38"));
+        sizes.add(new Size(2,"39"));
+        sizes.add(new Size(3,"40"));
+        sizes.add(new Size(4,"41"));
+        sizes.add(new Size(5,"42"));
+        sizes.add(new Size(6,"43"));
+        sizes.add(new Size(7,"44"));
+        sizes.add(new Size(8,"45"));
+        sizes.add(new Size(9,"46"));
+        sizes.add(new Size(10,"47"));
+        sizes.add(new Size(11,"48"));
     }
 }

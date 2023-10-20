@@ -127,15 +127,15 @@ public class ProductFragment extends Fragment {
         products2 = new ArrayList<>();
         products3 = new ArrayList<>();
         products4 = new ArrayList<>();
-        products1.add(new Product("New Balance", R.drawable.shoes, 3400));
-        products1.add(new Product("Nike", R.drawable.nike, 2600));
-        products1.add(new Product("Adidas", R.drawable.adidas, 1900));
-        products2.add(new Product("Sorel", R.drawable.sorel, 2800));
-        products2.add(new Product("Skechers", R.drawable.skechers, 3200));
-        products2.add(new Product("Underarmour", R.drawable.underarmour, 4400));
-        products3.add(new Product("Skechers", R.drawable.skechers, 3200));
-        products3.add(new Product("Nike", R.drawable.nike, 2600));
-        products3.add(new Product("Underarmour", R.drawable.underarmour, 4400));
-        products4.add(new Product("Underarmour", R.drawable.underarmour, 4400));
+        products1.add(new Product(1,"New Balance", R.drawable.shoes, 3400));
+        products1.add(new Product(2,"Nike", R.drawable.nike, 2600));
+        products1.add(new Product(3,"Adidas", R.drawable.adidas, 1900));
+        products2.add(new Product(4,"Sorel", R.drawable.sorel, 2800));
+        products2.add(new Product(5,"Skechers", R.drawable.skechers, 3200));
+        products2.add(new Product(6,"Underarmour", R.drawable.underarmour, 4400));
+        products3.add(new Product(5,"Skechers", R.drawable.skechers, 3200));
+        products3.add(new Product(2,"Nike", R.drawable.nike, 2600));
+        products3.add(new Product(6,"Underarmour", R.drawable.underarmour, 4400));
+        products4.add(new Product(6,"Underarmour", R.drawable.underarmour, 4400));
     }
 }

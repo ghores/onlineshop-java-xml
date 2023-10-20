@@ -3,7 +3,7 @@ package com.example.onlineshop.models;
 import java.io.Serializable;
 
 public class Product implements Serializable {
-
+    private long id;
     private String name;
     private int image;
     private long price;
@@ -11,7 +11,16 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(String name, int image, long price) {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Product(long id, String name, int image, long price) {
+        this.id = id;
         this.name = name;
         this.image = image;
         this.price = price;

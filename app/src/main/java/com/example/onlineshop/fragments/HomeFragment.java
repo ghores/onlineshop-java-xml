@@ -85,11 +85,11 @@ public class HomeFragment extends Fragment {
         productCategories.add(new ProductCategory("Underarmour", R.drawable.underarmour));
 
         products = new ArrayList<>();
-        products.add(new Product("New Balance", R.drawable.shoes, 3400));
-        products.add(new Product("Nike", R.drawable.nike, 2600));
-        products.add(new Product("Adidas", R.drawable.adidas, 1900));
-        products.add(new Product("Sorel", R.drawable.sorel, 2800));
-        products.add(new Product("Skechers", R.drawable.skechers, 3200));
-        products.add(new Product("Underarmour", R.drawable.underarmour, 4400));
+        products.add(new Product(1,"New Balance", R.drawable.shoes, 3400));
+        products.add(new Product(2,"Nike", R.drawable.nike, 2600));
+        products.add(new Product(3,"Adidas", R.drawable.adidas, 1900));
+        products.add(new Product(4,"Sorel", R.drawable.sorel, 2800));
+        products.add(new Product(5,"Skechers", R.drawable.skechers, 3200));
+        products.add(new Product(6,"Underarmour", R.drawable.underarmour, 4400));
     }
 }
