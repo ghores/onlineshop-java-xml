@@ -12,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.onlineshop.handlers.CardDBHandler;
+import com.example.onlineshop.mock.MockDataHandler;
+import com.example.onlineshop.models.CardItem;
 import com.example.onlineshop.models.Color;
 import com.example.onlineshop.models.Product;
 import com.example.onlineshop.models.Size;
@@ -113,8 +116,18 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     Snackbar.make(mainView, "please selected a color", Snackbar.LENGTH_LONG).show();
                     return;
                 }
-                String result = "Selected Items : \nColor : " + selectedColor.getName() + "\nSize : " + selectedSize.getName();
-                Toast.makeText(ProductDetailsActivity.this, result, Toast.LENGTH_LONG).show();
+                try {
+
+                    CardDBHandler dbHandler = new CardDBHandler(ProductDetailsActivity.this);
+                    CardItem cardItem = new CardItem();
+                    cardItem.setProduct(product);
+                    cardItem.setSize(selectedSize);
+                    cardItem.setColor(selectedColor);
+                    cardItem.setQuantity(1);
+                    dbHandler.addToBasket(cardItem);
+                } catch (Exception e) {
+                    Toast.makeText(ProductDetailsActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                }
                 finish();
                 ProductDetailsActivity.this.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }
@@ -134,25 +147,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
     }
 
     private void fillColors() {
-        colors = new ArrayList<>();
-        colors.add(new Color(1,"Pink", "#f78fb3"));
-        colors.add(new Color(2,"Blue", "#546de5"));
-        colors.add(new Color(3,"Aqua", "#3dc1d3"));
-        colors.add(new Color(4,"Purple", "#574b90"));
+        colors = MockDataHandler.getColors();
     }
 
     private void fillSizes() {
-        sizes = new ArrayList<>();
-        sizes.add(new Size(1,"38"));
-        sizes.add(new Size(2,"39"));
-        sizes.add(new Size(3,"40"));
-        sizes.add(new Size(4,"41"));
-        sizes.add(new Size(5,"42"));
-        sizes.add(new Size(6,"43"));
-        sizes.add(new Size(7,"44"));
-        sizes.add(new Size(8,"45"));
-        sizes.add(new Size(9,"46"));
-        sizes.add(new Size(10,"47"));
-        sizes.add(new Size(11,"48"));
+        sizes = MockDataHandler.getSizes();
     }
 }

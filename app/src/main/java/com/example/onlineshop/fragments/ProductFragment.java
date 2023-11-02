@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.ProductAdapter;
 import com.example.onlineshop.adapters.ProductCategoryAdapter;
+import com.example.onlineshop.mock.MockDataHandler;
 import com.example.onlineshop.models.Product;
 import com.example.onlineshop.models.ProductCategory;
 import com.google.android.material.chip.Chip;
@@ -115,13 +116,7 @@ public class ProductFragment extends Fragment {
 
     private void fillMockDataList() {
 
-        productCategories = new ArrayList<>();
-        productCategories.add(new ProductCategory("New Balance", R.drawable.shoes));
-        productCategories.add(new ProductCategory("Nike", R.drawable.nike));
-        productCategories.add(new ProductCategory("Adidas", R.drawable.adidas));
-        productCategories.add(new ProductCategory("Sorel", R.drawable.sorel));
-        productCategories.add(new ProductCategory("Skechers", R.drawable.skechers));
-        productCategories.add(new ProductCategory("Underarmour", R.drawable.underarmour));
+        productCategories = MockDataHandler.getProductCategories();
 
         products1 = new ArrayList<>();
         products2 = new ArrayList<>();

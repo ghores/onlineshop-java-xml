@@ -17,6 +17,7 @@ import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.ProductAdapter;
 import com.example.onlineshop.adapters.ProductCategoryAdapter;
 import com.example.onlineshop.adapters.SliderAdapter;
+import com.example.onlineshop.mock.MockDataHandler;
 import com.example.onlineshop.models.Product;
 import com.example.onlineshop.models.ProductCategory;
 import com.example.onlineshop.models.SliderItem;
@@ -60,8 +61,8 @@ public class HomeFragment extends Fragment {
         popularProductRecyclerView.setLayoutManager(new GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false));
 
         SliderAdapter sliderAdapter = new SliderAdapter(activity);
-        sliderAdapter.addItem(new SliderItem("Shopping 1","https://imgscf.slidemembers.com/docs/1/1/259/shopping_slide_ppt_258349.jpg"));
-        sliderAdapter.addItem(new SliderItem("Shopping 2","https://imgscf.slidemembers.com/docs/1/1/259/shopping_slide_ppt_258355.jpg"));
+        sliderAdapter.addItem(new SliderItem("Shopping 1", "https://imgscf.slidemembers.com/docs/1/1/259/shopping_slide_ppt_258349.jpg"));
+        sliderAdapter.addItem(new SliderItem("Shopping 2", "https://imgscf.slidemembers.com/docs/1/1/259/shopping_slide_ppt_258355.jpg"));
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.setScrollTimeInSec(3);
         sliderView.startAutoCycle();
@@ -76,20 +77,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void fillMockDataList() {
-        productCategories = new ArrayList<>();
-        productCategories.add(new ProductCategory("New Balance", R.drawable.shoes));
-        productCategories.add(new ProductCategory("Nike", R.drawable.nike));
-        productCategories.add(new ProductCategory("Adidas", R.drawable.adidas));
-        productCategories.add(new ProductCategory("Sorel", R.drawable.sorel));
-        productCategories.add(new ProductCategory("Skechers", R.drawable.skechers));
-        productCategories.add(new ProductCategory("Underarmour", R.drawable.underarmour));
-
-        products = new ArrayList<>();
-        products.add(new Product(1,"New Balance", R.drawable.shoes, 3400));
-        products.add(new Product(2,"Nike", R.drawable.nike, 2600));
-        products.add(new Product(3,"Adidas", R.drawable.adidas, 1900));
-        products.add(new Product(4,"Sorel", R.drawable.sorel, 2800));
-        products.add(new Product(5,"Skechers", R.drawable.skechers, 3200));
-        products.add(new Product(6,"Underarmour", R.drawable.underarmour, 4400));
+        products = MockDataHandler.getProducts();
+        productCategories = MockDataHandler.getProductCategories();
     }
 }
