@@ -19,7 +19,9 @@ import com.example.onlineshop.fragments.BlogFragment;
 import com.example.onlineshop.fragments.HomeFragment;
 import com.example.onlineshop.fragments.LoginFragment;
 import com.example.onlineshop.fragments.ProductFragment;
+import com.example.onlineshop.handlers.CardDBHandler;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 if (itemId == R.id.login) {
                     transaction.replace(R.id.mainFrame, new LoginFragment(MainActivity.this));
                 } else if (itemId == R.id.register) {
-                   // transaction.replace(R.id.mainFrame, new RegisterFragment(MainActivity.this));
+                    // transaction.replace(R.id.mainFrame, new RegisterFragment(MainActivity.this));
                 } else if (itemId == R.id.about) {
                     //transaction.replace(R.id.mainFrame, new AboutFragment(MainActivity.this));
                 }
@@ -137,4 +139,29 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2000);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CardDBHandler cardDBHandler = new CardDBHandler(this);
+        int basketCount = cardDBHandler.getAllBasketDataCount();
+        BadgeDrawable badge = bottomNav.getOrCreateBadge(R.id.basket);
+        if (basketCount > 0) {
+            badge.setVisible(true);
+            badge.setNumber(basketCount);
+        } else {
+            badge.setVisible(false);
+            badge.setNumber(0);
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
