@@ -1,23 +1,13 @@
 package com.example.onlineshop.models;
 
-public class Size {
+import java.io.Serializable;
 
+public class Size implements Serializable {
     private long id;
-    private String name;
+    private String title;
     private String description;
 
     public Size() {
-    }
-
-    public Size(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public Size(long id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
     }
 
     public long getId() {
@@ -28,12 +18,12 @@ public class Size {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {

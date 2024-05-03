@@ -16,7 +16,7 @@ import com.example.onlineshop.fragments.BasketFragment;
 import com.example.onlineshop.fragments.BlogFragment;
 import com.example.onlineshop.fragments.HomeFragment;
 import com.example.onlineshop.fragments.LoginFragment;
-import com.example.onlineshop.fragments.ProductFragment;
+import com.example.onlineshop.fragments.ProductsFragment;
 import com.example.onlineshop.handlers.CardDBHandler;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.badge.BadgeDrawable;
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 if (itemId == R.id.home) {
                     transaction.replace(R.id.mainFrame, new HomeFragment(MainActivity.this));
                 } else if (itemId == R.id.products) {
-                    transaction.replace(R.id.mainFrame, new ProductFragment(MainActivity.this));
+                    transaction.replace(R.id.mainFrame, new ProductsFragment(MainActivity.this));
                 } else if (itemId == R.id.blog) {
                     transaction.replace(R.id.mainFrame, new BlogFragment(MainActivity.this));
                 } else if (itemId == R.id.basket) {

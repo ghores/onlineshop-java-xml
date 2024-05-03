@@ -10,35 +10,36 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/product_image"
             android:layout_width="185dp"
             android:layout_height="160dp"
-            android:contentDescription="@string/shoesPicture"
+            android:contentDescription="@string/personPicture"
             android:scaleType="centerCrop"
             android:src="@drawable/shoes"
             android:transitionName="product_image" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/product_category_title_shape"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="12dp"
-            android:textAlignment="center">
+            android:textAlignment="center"
+            android:weightSum="3">
 
             <TextView
                 android:id="@+id/product_title"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:gravity="start"
                 android:paddingStart="5dp"
-                android:text="@string/product"
+                android:text="@string/product_product_product_product"
                 android:textColor="@android:color/white"
                 android:transitionName="product_name"
                 tools:ignore="RtlSymmetry" />
@@ -46,13 +47,13 @@
             <TextView
                 android:id="@+id/product_price"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="start"
                 android:paddingStart="5dp"
                 android:text="@string/price"
                 android:textColor="@android:color/white"
-                android:transitionName="product_name"
+                android:transitionName="product_price"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
     </LinearLayout>

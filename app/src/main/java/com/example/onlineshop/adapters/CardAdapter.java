@@ -13,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.onlineshop.R;
+import com.example.onlineshop.enums.ApiAddress;
 import com.example.onlineshop.models.CardItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -50,8 +52,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         TextView quantity = holder.quantity;
         ImageView image = holder.image;
 
-        name.setText(cardItem.getProduct().getName() + " (" + cardItem.getSize().getName() + " - " + cardItem.getColor().getName() + ")");
-        image.setImageDrawable(activity.getResources().getDrawable(cardItem.getProduct().getImage(), activity.getTheme()));
+        name.setText(cardItem.getProduct().getTitle() + " (" + cardItem.getSize().getTitle() + " - " + cardItem.getColor().getName() + ")");
+        Picasso.get().load(ApiAddress.getFileUrl(cardItem.getProduct().getImage())).into(holder.image);
         price.setText(cardItem.getProduct().getPrice() + "$");
         quantity.setText(String.valueOf(cardItem.getQuantity()));
 

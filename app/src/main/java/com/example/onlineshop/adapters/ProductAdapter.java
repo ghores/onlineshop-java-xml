@@ -1,5 +1,6 @@
 package com.example.onlineshop.adapters;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
@@ -17,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.onlineshop.ProductDetailsActivity;
 import com.example.onlineshop.R;
+import com.example.onlineshop.enums.ApiAddress;
 import com.example.onlineshop.models.Product;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -43,6 +46,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         return viewHolder;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = dataList.get(position);
@@ -51,10 +55,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         ImageView image = holder.image;
         TextView price = holder.price;
 
-        title.setText(product.getName());
+        title.setText(product.getTitle());
         price.setText(product.getPrice() + "$");
-        image.setImageDrawable(activity.getResources().getDrawable(product.getImage()));
-        //image.setImageDrawable(ResourcesCompat.getDrawable(activity.getResources(),product.getImage(),null));
+        Picasso.get().load(ApiAddress.getFileUrl(product.getImage())).into(image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

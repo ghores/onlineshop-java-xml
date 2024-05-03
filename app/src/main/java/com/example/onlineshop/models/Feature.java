@@ -2,13 +2,10 @@ package com.example.onlineshop.models;
 
 import java.io.Serializable;
 
-public class Color implements Serializable {
+public class Feature implements Serializable {
     private long id;
-    private String name;
+    private String key;
     private String value;
-
-    public Color() {
-    }
 
     public long getId() {
         return id;
@@ -18,12 +15,12 @@ public class Color implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getKey() {
+        return key;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getValue() {

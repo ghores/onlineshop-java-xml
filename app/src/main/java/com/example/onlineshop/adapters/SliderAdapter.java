@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.onlineshop.R;
+import com.example.onlineshop.enums.ApiAddress;
 import com.example.onlineshop.models.SliderItem;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 import com.squareup.picasso.Picasso;
@@ -42,6 +43,11 @@ public class SliderAdapter extends
         notifyDataSetChanged();
     }
 
+    public void setItems(List<SliderItem> sliderItems){
+        this.mSliderItems.addAll(sliderItems);
+        notifyDataSetChanged();
+    }
+
     @Override
     public SliderAdapterVH onCreateViewHolder(ViewGroup parent) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.slider_image_layout, null);
@@ -55,8 +61,7 @@ public class SliderAdapter extends
 
         viewHolder.textViewDescription.setText(sliderItem.getDescription());
         viewHolder.textViewDescription.setTextSize(16);
-
-        Picasso.get().load(sliderItem.getImageUrl()).into(viewHolder.imageViewBackground);
+        Picasso.get().load(ApiAddress.getFileUrl(sliderItem.getImage())).into(viewHolder.imageViewBackground);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

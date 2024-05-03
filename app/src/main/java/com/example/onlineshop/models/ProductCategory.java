@@ -3,31 +3,49 @@ package com.example.onlineshop.models;
 import java.io.Serializable;
 
 public class ProductCategory implements Serializable {
+    private long id;
+    private String title;
+    private String image;
+    private String description;
+    private boolean enable;
 
-    private String name;
-    private int image;
-
-    public ProductCategory() {
+    public long getId() {
+        return id;
     }
 
-    public ProductCategory(String name, int image) {
-        this.name = name;
-        this.image = image;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
 }

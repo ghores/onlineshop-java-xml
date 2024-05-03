@@ -49,7 +49,7 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
 
         CardItem item = new CardItem();
         item.setId(Integer.parseInt(cursor.getString(0)));
-        item.setProduct(MockDataHandler.getById(Long.parseLong(cursor.getString(1))));
+        //item.setProduct(MockDataHandler.getById(Long.parseLong(cursor.getString(1))));
         item.setSize(MockDataHandler.getSizeById(Long.parseLong(cursor.getString(2))));
         item.setColor(MockDataHandler.getColorById(Long.parseLong(cursor.getString(3))));
         item.setQuantity(Integer.parseInt(String.valueOf(4)));
@@ -72,7 +72,7 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
 
         CardItem item = new CardItem();
         item.setId(Integer.parseInt(cursor.getString(0)));
-        item.setProduct(MockDataHandler.getById(Long.parseLong(cursor.getString(1))));
+        //item.setProduct(MockDataHandler.getById(Long.parseLong(cursor.getString(1))));
         item.setSize(MockDataHandler.getSizeById(Long.parseLong(cursor.getString(2))));
         item.setColor(MockDataHandler.getColorById(Long.parseLong(cursor.getString(3))));
         item.setQuantity(Integer.parseInt(cursor.getString(4)));
@@ -130,7 +130,7 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
         do {
             CardItem item = new CardItem();
             item.setId(Integer.parseInt(cursor.getString(0)));
-            item.setProduct(MockDataHandler.getById(Long.parseLong(cursor.getString(1))));
+            //item.setProduct(MockDataHandler.getById(Long.parseLong(cursor.getString(1))));
             item.setSize(MockDataHandler.getSizeById(Long.parseLong(cursor.getString(2))));
             item.setColor(MockDataHandler.getColorById(Long.parseLong(cursor.getString(3))));
             item.setQuantity(Integer.parseInt(cursor.getString(4)));

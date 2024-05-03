@@ -13,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.onlineshop.R;
+import com.example.onlineshop.enums.ApiAddress;
 import com.example.onlineshop.models.ProductCategory;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -46,8 +48,8 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
         TextView title = holder.title;
         ImageView image = holder.image;
 
-        title.setText(category.getName());
-        image.setImageDrawable(activity.getResources().getDrawable(category.getImage(), activity.getTheme()));
+        title.setText(category.getTitle());
+        Picasso.get().load(ApiAddress.getFileUrl(category.getImage())).into(holder.image);
     }
 
     @Override
