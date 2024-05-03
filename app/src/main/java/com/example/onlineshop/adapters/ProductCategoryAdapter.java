@@ -19,8 +19,8 @@ import java.util.List;
 
 public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategoryAdapter.ViewHolder> {
 
-    private List<ProductCategory> dataList;
-    private Activity activity;
+    private final List<ProductCategory> dataList;
+    private final Activity activity;
 
     public ProductCategoryAdapter(List<ProductCategory> dataList, Activity activity) {
         this.dataList = dataList;
@@ -55,10 +55,10 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
         return dataList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView image;
-        private TextView title;
+        private final ImageView image;
+        private final TextView title;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

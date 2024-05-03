@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.ProductAdapter;
 import com.example.onlineshop.adapters.ProductCategoryAdapter;
@@ -22,13 +20,11 @@ import com.example.onlineshop.models.Product;
 import com.example.onlineshop.models.ProductCategory;
 import com.example.onlineshop.models.SliderItem;
 import com.smarteist.autoimageslider.SliderView;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private Activity activity;
+    private final Activity activity;
     private RecyclerView mainRecyclerView;
     private RecyclerView newProductsRecyclerView;
     private RecyclerView popularProductRecyclerView;
@@ -66,7 +62,6 @@ public class HomeFragment extends Fragment {
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.setScrollTimeInSec(3);
         sliderView.startAutoCycle();
-
     }
 
     private void bindViews(ViewGroup view) {

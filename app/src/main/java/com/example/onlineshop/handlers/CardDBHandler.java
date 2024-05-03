@@ -15,7 +15,6 @@ import java.util.List;
 
 public class CardDBHandler extends BaseDBHandler<CardItem> {
 
-
     public CardDBHandler(@Nullable Context context) {
         super(context);
     }
@@ -54,6 +53,7 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
         item.setSize(MockDataHandler.getSizeById(Long.parseLong(cursor.getString(2))));
         item.setColor(MockDataHandler.getColorById(Long.parseLong(cursor.getString(3))));
         item.setQuantity(Integer.parseInt(String.valueOf(4)));
+        cursor.close();
         return item;
     }
 
@@ -76,6 +76,7 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
         item.setSize(MockDataHandler.getSizeById(Long.parseLong(cursor.getString(2))));
         item.setColor(MockDataHandler.getColorById(Long.parseLong(cursor.getString(3))));
         item.setQuantity(Integer.parseInt(cursor.getString(4)));
+        cursor.close();
         return item;
     }
 
@@ -103,7 +104,6 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
         return oldData;
     }
 
-
     public int getAllBasketDataCount() {
         String countQuery = "SELECT * FROM " + getTableName();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -125,7 +125,6 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
         if (cursor.getCount() == 0)
             return new ArrayList<>();
 
-
         List<CardItem> result = new ArrayList<>();
 
         do {
@@ -137,7 +136,7 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
             item.setQuantity(Integer.parseInt(cursor.getString(4)));
             result.add(item);
         } while (cursor.moveToNext());
-
+        cursor.close();
         return result;
     }
 }

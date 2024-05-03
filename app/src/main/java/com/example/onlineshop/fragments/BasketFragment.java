@@ -23,7 +23,7 @@ import java.util.List;
 
 public class BasketFragment extends Fragment {
 
-    private Activity activity;
+    private final Activity activity;
     private RecyclerView basketView;
     private List<CardItem> dataList;
 
@@ -56,5 +56,4 @@ public class BasketFragment extends Fragment {
         CardDBHandler dbHandler = new CardDBHandler(activity);
         dataList = dbHandler.getAllData();
     }
-
 }

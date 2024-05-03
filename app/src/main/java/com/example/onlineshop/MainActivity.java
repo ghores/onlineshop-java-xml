@@ -1,19 +1,17 @@
 package com.example.onlineshop;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 import com.example.onlineshop.fragments.BasketFragment;
 import com.example.onlineshop.fragments.BlogFragment;
 import com.example.onlineshop.fragments.HomeFragment;
@@ -107,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     //transaction.replace(R.id.mainFrame, new AboutFragment(MainActivity.this));
                 }
                 transaction.commit();
-                mainDrawer.closeDrawer(Gravity.LEFT);
+                mainDrawer.closeDrawer(GravityCompat.START);
                 return true;
             }
         });

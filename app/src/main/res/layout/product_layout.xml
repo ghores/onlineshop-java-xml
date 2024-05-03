@@ -1,5 +1,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -16,6 +17,7 @@
             android:id="@+id/product_image"
             android:layout_width="185dp"
             android:layout_height="160dp"
+            android:contentDescription="@string/shoesPicture"
             android:scaleType="centerCrop"
             android:src="@drawable/shoes"
             android:transitionName="product_image" />
@@ -27,30 +29,31 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="12dp"
-            android:textAlignment="center"
-            android:weightSum="3">
+            android:textAlignment="center">
 
             <TextView
                 android:id="@+id/product_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:gravity="left"
-                android:paddingLeft="5dp"
-                android:text="Product"
+                android:gravity="start"
+                android:paddingStart="5dp"
+                android:text="@string/product"
                 android:textColor="@android:color/white"
-                android:transitionName="product_name" />
+                android:transitionName="product_name"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/product_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:paddingLeft="5dp"
-                android:text="Price$"
+                android:gravity="start"
+                android:paddingStart="5dp"
+                android:text="@string/price"
                 android:textColor="@android:color/white"
-                android:transitionName="product_name" />
+                android:transitionName="product_name"
+                tools:ignore="RtlSymmetry" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

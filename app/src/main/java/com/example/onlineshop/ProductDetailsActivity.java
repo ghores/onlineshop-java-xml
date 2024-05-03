@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.onlineshop.handlers.CardDBHandler;
 import com.example.onlineshop.mock.MockDataHandler;
 import com.example.onlineshop.models.CardItem;
@@ -21,9 +20,8 @@ import com.example.onlineshop.models.Size;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.snackbar.Snackbar;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
@@ -53,7 +51,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         //endregion
 
         //region product details
-        product = (Product) getIntent().getExtras().get("product");
+        product = (Product) Objects.requireNonNull(getIntent().getExtras()).get("product");
         price.setText(product.getPrice() + "$");
         name.setText(product.getName());
         image.setImageDrawable(getResources().getDrawable(product.getImage(), null));
@@ -84,8 +82,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         //endregion
 
         //region handle colors
-        for (Color color :
-                colors) {
+        for (Color color : colors) {
             Chip chip = new Chip(this);
             chip.setText(color.getName());
             chip.setCheckable(true);

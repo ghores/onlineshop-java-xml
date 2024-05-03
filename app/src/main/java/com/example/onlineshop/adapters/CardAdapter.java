@@ -1,5 +1,6 @@
 package com.example.onlineshop.adapters;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -19,8 +20,8 @@ import java.util.List;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
-    private List<CardItem> dataList;
-    private Activity activity;
+    private final List<CardItem> dataList;
+    private final Activity activity;
 
     public CardAdapter(Activity activity, List<CardItem> dataList) {
         this.dataList = dataList;
@@ -35,11 +36,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
 
         View view = layoutInflater.inflate(R.layout.card_item_layout, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        return new ViewHolder(view);
 
     }
 
+    @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CardItem cardItem = dataList.get(position);
@@ -50,7 +51,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         ImageView image = holder.image;
 
         name.setText(cardItem.getProduct().getName() + " (" + cardItem.getSize().getName() + " - " + cardItem.getColor().getName() + ")");
-        image.setImageDrawable(activity.getResources().getDrawable(cardItem.getProduct().getImage()));
+        image.setImageDrawable(activity.getResources().getDrawable(cardItem.getProduct().getImage(), activity.getTheme()));
         price.setText(cardItem.getProduct().getPrice() + "$");
         quantity.setText(String.valueOf(cardItem.getQuantity()));
 
@@ -61,7 +62,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return dataList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView image;
         public TextView name, price, quantity;

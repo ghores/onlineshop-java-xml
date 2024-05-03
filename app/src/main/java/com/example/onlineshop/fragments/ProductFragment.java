@@ -7,14 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.ProductAdapter;
 import com.example.onlineshop.adapters.ProductCategoryAdapter;
@@ -22,13 +20,12 @@ import com.example.onlineshop.mock.MockDataHandler;
 import com.example.onlineshop.models.Product;
 import com.example.onlineshop.models.ProductCategory;
 import com.google.android.material.chip.Chip;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductFragment extends Fragment {
 
-    private Activity activity;
+    private final Activity activity;
     private RecyclerView categoryRecyclerView, filteredRecyclerView;
     private Chip cheapChip, newChip, popularChip, expensiveChip;
     private TextView filterText;

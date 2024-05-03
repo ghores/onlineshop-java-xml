@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:text="@string/product_category" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,7 +22,7 @@
         <com.google.android.material.chip.ChipGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             app:checkedChip="@+id/new_chip"
             app:singleLine="true"
             app:singleSelection="true">
@@ -65,7 +65,7 @@
         android:id="@+id/filtered_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:text="@string/new_products" />
 

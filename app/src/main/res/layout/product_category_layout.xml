@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
     android:layout_margin="10dp"
     android:elevation="8dp"
     app:cardCornerRadius="15dp"
@@ -18,6 +17,7 @@
             android:id="@+id/product_category_image"
             android:layout_width="120dp"
             android:layout_height="100dp"
+            android:contentDescription="@string/productCategory"
             android:scaleType="centerCrop"
             android:src="@drawable/shoes" />
 
@@ -33,7 +33,7 @@
                 android:id="@+id/product_category_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Product"
+                android:text="@string/product"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>

@@ -43,9 +43,7 @@
                 <FrameLayout
                     android:id="@+id/mainFrame"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </FrameLayout>
+                    android:layout_height="match_parent"/>
 
                 <View
                     android:layout_width="match_parent"

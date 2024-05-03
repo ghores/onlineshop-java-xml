@@ -34,7 +34,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:text="@string/product_category" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:text="@string/new_products" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:text="@string/popular_products" />
 
     <androidx.recyclerview.widget.RecyclerView
