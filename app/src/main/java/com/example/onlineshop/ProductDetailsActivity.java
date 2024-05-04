@@ -35,8 +35,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private Button btnAddToCard;
     private LinearLayout mainView;
     private ChipGroup sizeChips, colorChips;
-    private List<Size> sizes;
-    private List<Color> colors;
 
     private Size selectedSize = null;
     private Color selectedColor = null;
@@ -61,13 +59,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
         Picasso.get().load(ApiAddress.getFileUrl(product.getImage())).into(image);
         //endregion
 
-        //region fill colors and sizes
-        fillColors();
-        fillSizes();
-        //endregion
 
         //region handle sizes
-        for (Size size : sizes) {
+        for (Size size : product.getSizesList()) {
             Chip chip = new Chip(this);
             chip.setText(size.getTitle());
             chip.setCheckable(true);
@@ -86,7 +80,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         //endregion
 
         //region handle colors
-        for (Color color : colors) {
+        for (Color color : product.getColorsList()) {
             Chip chip = new Chip(this);
             chip.setText(color.getName());
             chip.setCheckable(true);
@@ -109,11 +103,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
         btnAddToCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (selectedSize == null) {
+                if (product.getSizesList().size() > 0 && selectedSize == null) {
                     Snackbar.make(mainView, "please selected a size", Snackbar.LENGTH_LONG).show();
                     return;
                 }
-                if (selectedColor == null) {
+                if (product.getSizesList().size() > 0 && selectedColor == null) {
                     Snackbar.make(mainView, "please selected a color", Snackbar.LENGTH_LONG).show();
                     return;
                 }
@@ -145,13 +139,5 @@ public class ProductDetailsActivity extends AppCompatActivity {
         colorChips = findViewById(R.id.chip_product_colors);
         btnAddToCard = findViewById(R.id.btn_add_to_card);
         mainView = findViewById(R.id.product_detail_view);
-    }
-
-    private void fillColors() {
-        colors = MockDataHandler.getColors();
-    }
-
-    private void fillSizes() {
-        sizes = MockDataHandler.getSizes();
     }
 }

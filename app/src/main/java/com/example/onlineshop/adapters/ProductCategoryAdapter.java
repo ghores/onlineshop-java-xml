@@ -2,7 +2,10 @@ package com.example.onlineshop.adapters;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.onlineshop.ProductActivity;
+import com.example.onlineshop.ProductDetailsActivity;
 import com.example.onlineshop.R;
 import com.example.onlineshop.enums.ApiAddress;
 import com.example.onlineshop.models.ProductCategory;
@@ -50,6 +55,19 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
 
         title.setText(category.getTitle());
         Picasso.get().load(ApiAddress.getFileUrl(category.getImage())).into(holder.image);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent productIntent = new Intent(activity, ProductActivity.class);
+                productIntent.putExtra("category", category);
+                Pair[] pairs = new Pair[2];
+                pairs[0] = new Pair(title, "category_name");
+                pairs[1] = new Pair(image, "category_image");
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity, pairs);
+                activity.startActivity(productIntent, options.toBundle());
+            }
+        });
     }
 
     @Override

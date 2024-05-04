@@ -6,10 +6,10 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="15dp"
-        android:layout_margin="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="15dp">
 
         <com.smarteist.autoimageslider.SliderView
             android:id="@+id/imageSlider"
@@ -45,8 +45,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/new_products" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -57,8 +57,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/popular_products" />
 
     <androidx.recyclerview.widget.RecyclerView

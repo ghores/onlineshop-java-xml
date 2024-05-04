@@ -50,9 +50,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         TextView name = holder.name;
         TextView price = holder.price;
         TextView quantity = holder.quantity;
-        ImageView image = holder.image;
 
-        name.setText(cardItem.getProduct().getTitle() + " (" + cardItem.getSize().getTitle() + " - " + cardItem.getColor().getName() + ")");
+        String productTitle = cardItem.getProduct().getTitle();
+        if (cardItem.getSize() != null) {
+            productTitle += " - " + cardItem.getSize().getTitle();
+        }
+        if (cardItem.getColor() != null) {
+            productTitle += " ( " + cardItem.getColor().getName() + " )";
+        }
+
+        name.setText(productTitle);
         Picasso.get().load(ApiAddress.getFileUrl(cardItem.getProduct().getImage())).into(holder.image);
         price.setText(cardItem.getProduct().getPrice() + "$");
         quantity.setText(String.valueOf(cardItem.getQuantity()));

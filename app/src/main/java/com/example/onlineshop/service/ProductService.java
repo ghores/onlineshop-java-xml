@@ -23,4 +23,11 @@ public class ProductService {
         Call<ServiceResponse<Product>> responseCall = client.getPopular();
         responseCall.enqueue(callback);
     }
+
+    public static void getByCategory(Callback<ServiceResponse<Product>> callback, long categoryId, int pageNumber, int pageSize) {
+        ClientHandler clientHandler = new ClientHandler();
+        ProductClient client = clientHandler.getRetrofit().create(ProductClient.class);
+        Call<ServiceResponse<Product>> responseCall = client.getByCategory(categoryId, pageNumber, pageSize);
+        responseCall.enqueue(callback);
+    }
 }

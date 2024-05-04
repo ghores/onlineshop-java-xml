@@ -29,7 +29,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 public class ProductsFragment extends Fragment {
 
-    private Activity activity;
+    private final Activity activity;
     private RecyclerView categoryRecyclerView, filteredRecyclerView;
     private Chip cheapChip, newChip, popularChip, expensiveChip;
     private TextView filterText;
