@@ -4,6 +4,13 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         jcenter()
+        maven { url = uri("https://maven.scijava.org/content/repositories/public/") }
+        maven {
+            url = uri("https://jcenter.bintray.com")
+        }
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 dependencyResolutionManagement {
@@ -12,6 +19,13 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter()
+        maven { url = uri("https://maven.scijava.org/content/repositories/public/") }
+        maven {
+            url = uri("https://jcenter.bintray.com")
+        }
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 

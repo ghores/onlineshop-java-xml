@@ -41,7 +41,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Slide Show
-    implementation("com.github.smarteist:autoimageslider:1.4.0")
+    implementation("com.github.smarteist:autoimageslider:1.3.9")
     //Picasso
     implementation("com.squareup.picasso:picasso:2.8")
     //Retrofit
