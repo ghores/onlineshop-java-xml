@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-05-04T05:48:34.567724200Z">
+        <DropdownSelection timestamp="2024-12-27T10:06:15.680584600Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Ghazimoradi\.android\avd\Pixel_8_Pro_API_VanillaIceCream.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Ghazimoradi\.android\avd\Pixel_9_Pro_API_VanillaIceCream.avd" />
             </handle>
           </Target>
         </DropdownSelection>
@@ -15,12 +15,12 @@
           <targets>
             <Target type="DEFAULT_BOOT">
               <handle>
-                <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Ghazimoradi\.android\avd\Pixel_8_Pro_API_VanillaIceCream.avd" />
+                <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Ghazimoradi\.android\avd\Pixel_9_Pro_API_VanillaIceCream.avd" />
               </handle>
             </Target>
             <Target type="DEFAULT_BOOT">
               <handle>
-                <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Ghazimoradi\.android\avd\Pixel_3a_API_27.avd" />
+                <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Ghazimoradi\.android\avd\Pixel_9_Pro_XL_API_25.avd" />
               </handle>
             </Target>
           </targets>
