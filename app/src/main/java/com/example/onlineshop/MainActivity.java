@@ -3,15 +3,16 @@ package com.example.onlineshop;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
+
 import com.example.onlineshop.fragments.BasketFragment;
 import com.example.onlineshop.fragments.BlogFragment;
 import com.example.onlineshop.fragments.HomeFragment;
@@ -58,21 +59,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-                /*switch (item.getItemId()) {
-                    case R.id.home:
-                        transaction.replace(R.id.mainFrame, new HomeFragment(MainActivity.this));
-                        break;
-                    case R.id.products:
-                        transaction.replace(R.id.mainFrame, new ProductFragment(MainActivity.this));
-                        break;
-                    case R.id.blog:
-                        transaction.replace(R.id.mainFrame, new BlogFragment(MainActivity.this));
-                        break;
-                    case R.id.basket:
-                        transaction.replace(R.id.mainFrame, new BasketFragment(MainActivity.this));
-                        break;
-                }*/
                 int itemId = item.getItemId();
                 if (itemId == R.id.home) {
                     transaction.replace(R.id.mainFrame, new HomeFragment(MainActivity.this));
