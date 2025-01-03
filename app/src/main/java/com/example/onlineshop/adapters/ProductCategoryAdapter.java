@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.onlineshop.ProductActivity;
-import com.example.onlineshop.ProductDetailsActivity;
 import com.example.onlineshop.R;
 import com.example.onlineshop.enums.ApiAddress;
 import com.example.onlineshop.models.ProductCategory;
@@ -37,22 +36,16 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-
-        View view = layoutInflater.inflate(R.layout.product_category_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_category_layout, parent, false);
         return new ViewHolder(view);
     }
-
 
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ProductCategory category = dataList.get(position);
-
         TextView title = holder.title;
         ImageView image = holder.image;
-
         title.setText(category.getTitle());
         Picasso.get().load(ApiAddress.getFileUrl(category.getImage())).into(holder.image);
 

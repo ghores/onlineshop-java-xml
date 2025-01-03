@@ -8,12 +8,14 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.ProductAdapter;
 import com.example.onlineshop.adapters.ProductCategoryAdapter;
@@ -23,10 +25,13 @@ import com.example.onlineshop.models.base.ServiceResponse;
 import com.example.onlineshop.service.ProductCategoryService;
 import com.example.onlineshop.service.ProductService;
 import com.google.android.material.chip.Chip;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 public class ProductsFragment extends Fragment {
 
     private final Activity activity;
@@ -48,9 +53,7 @@ public class ProductsFragment extends Fragment {
 
     private void init(ViewGroup root) {
         bindViews(root);
-
         fillProductCategoryData();
-
         GridLayoutManager newProductsLayoutManager = new GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false);
         filteredRecyclerView.setLayoutManager(newProductsLayoutManager);
         fillNewProductsData();
@@ -112,7 +115,6 @@ public class ProductsFragment extends Fragment {
                     LinearLayoutManager layoutManager = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);
                     categoryRecyclerView.setLayoutManager(layoutManager);
                 }
-
             }
 
             @Override
@@ -121,6 +123,7 @@ public class ProductsFragment extends Fragment {
             }
         });
     }
+
     private void fillNewProductsData() {
         ProductService.getNew(new Callback<ServiceResponse<Product>>() {
             @Override
@@ -130,7 +133,6 @@ public class ProductsFragment extends Fragment {
                     filteredRecyclerView.setAdapter(new ProductAdapter(activity, dataList));
                     filterText.setText(getResources().getText(R.string.new_products));
                 }
-
             }
 
             @Override
@@ -139,7 +141,6 @@ public class ProductsFragment extends Fragment {
             }
         });
     }
-
 
     private void fillPopularProductsData() {
         ProductService.getPopular(new Callback<ServiceResponse<Product>>() {
@@ -150,7 +151,6 @@ public class ProductsFragment extends Fragment {
                     filteredRecyclerView.setAdapter(new ProductAdapter(activity, dataList));
                     filterText.setText(getResources().getText(R.string.popular_products));
                 }
-
             }
 
             @Override
@@ -159,5 +159,4 @@ public class ProductsFragment extends Fragment {
             }
         });
     }
-
 }

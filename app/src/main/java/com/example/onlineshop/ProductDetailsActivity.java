@@ -1,7 +1,5 @@
 package com.example.onlineshop;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -12,9 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.onlineshop.enums.ApiAddress;
 import com.example.onlineshop.handlers.CardDBHandler;
-import com.example.onlineshop.mock.MockDataHandler;
 import com.example.onlineshop.models.CardItem;
 import com.example.onlineshop.models.Color;
 import com.example.onlineshop.models.Product;
@@ -23,9 +22,6 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
-import java.util.Objects;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
@@ -53,12 +49,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
         //endregion
 
         //region product details
-        product = (Product) Objects.requireNonNull(getIntent().getExtras()).get("product");
+        product = (Product) getIntent().getExtras().get("product");
         price.setText(product.getPrice() + "$");
         name.setText(product.getTitle());
         Picasso.get().load(ApiAddress.getFileUrl(product.getImage())).into(image);
         //endregion
-
 
         //region handle sizes
         for (Size size : product.getSizesList()) {
@@ -112,7 +107,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     return;
                 }
                 try {
-
                     CardDBHandler dbHandler = new CardDBHandler(ProductDetailsActivity.this);
                     CardItem cardItem = new CardItem();
                     cardItem.setProduct(product);

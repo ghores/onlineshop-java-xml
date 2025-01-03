@@ -18,9 +18,6 @@ import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.ProductAdapter;
 import com.example.onlineshop.adapters.ProductCategoryAdapter;
 import com.example.onlineshop.adapters.SliderAdapter;
-import com.example.onlineshop.clients.SliderClient;
-import com.example.onlineshop.handlers.ClientHandler;
-import com.example.onlineshop.mock.MockDataHandler;
 import com.example.onlineshop.models.Product;
 import com.example.onlineshop.models.ProductCategory;
 import com.example.onlineshop.models.SliderItem;
@@ -42,7 +39,6 @@ public class HomeFragment extends Fragment {
     private RecyclerView mainRecyclerView;
     private RecyclerView newProductsRecyclerView;
     private RecyclerView popularProductRecyclerView;
-    private List<ProductCategory> productCategories;
     private SliderView sliderView;
 
     public HomeFragment(Activity activity) {

@@ -37,13 +37,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        Context context = parent.getContext();
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-
-        View view = layoutInflater.inflate(R.layout.product_layout, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_layout, parent, false);
+        return new ViewHolder(view);
     }
 
     @SuppressLint("SetTextI18n")
@@ -72,7 +67,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 activity.startActivity(productIntent, options.toBundle());
             }
         });
-
     }
 
     @Override
@@ -91,7 +85,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             image = itemView.findViewById(R.id.product_image);
             title = itemView.findViewById(R.id.product_title);
             price = itemView.findViewById(R.id.product_price);
-
         }
     }
 }

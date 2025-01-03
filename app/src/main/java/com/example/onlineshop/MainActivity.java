@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 int itemId = item.getItemId();
                 if (itemId == R.id.home) {
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 } else if (itemId == R.id.basket) {
                     transaction.replace(R.id.mainFrame, new BasketFragment(MainActivity.this));
                 }
-
                 //transaction.addToBackStack(null);
                 transaction.commit();
                 return true;
@@ -80,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                @SuppressLint("CommitTransaction") FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 int itemId = item.getItemId();
                 if (itemId == R.id.login) {
                     transaction.replace(R.id.mainFrame, new LoginFragment(MainActivity.this));
@@ -113,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         }
         this.doubleBackToExitPressedOnce = true;
         Snackbar snackbar = Snackbar.make(mainFrame, R.string.twice_back, Snackbar.LENGTH_LONG);
-        snackbar.getView().setTranslationY(-135);
+        snackbar.getView().setTranslationY(-130);
         snackbar.show();
 
         new Handler().postDelayed(new Runnable() {

@@ -1,7 +1,6 @@
 package com.example.onlineshop.adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SliderAdapter extends
-        SliderViewAdapter<SliderAdapter.SliderAdapterVH> {
+public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterVH> {
 
     private Context context;
     private List<SliderItem> mSliderItems = new ArrayList<>();
@@ -43,7 +41,7 @@ public class SliderAdapter extends
         notifyDataSetChanged();
     }
 
-    public void setItems(List<SliderItem> sliderItems){
+    public void setItems(List<SliderItem> sliderItems) {
         this.mSliderItems.addAll(sliderItems);
         notifyDataSetChanged();
     }
@@ -78,7 +76,6 @@ public class SliderAdapter extends
     }
 
     static class SliderAdapterVH extends SliderViewAdapter.ViewHolder {
-
         View itemView;
         ImageView imageViewBackground;
         TextView textViewDescription;
@@ -90,5 +87,4 @@ public class SliderAdapter extends
             this.itemView = itemView;
         }
     }
-
 }
