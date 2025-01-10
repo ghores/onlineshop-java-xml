@@ -8,5 +8,5 @@ import retrofit2.http.GET;
 
 public interface ProductCategoryClient {
     @GET("productCategory")
-    Call<ServiceResponse<ProductCategory>> get();
+    Call<ServiceResponse<ProductCategory>> getProductCategory();
 }

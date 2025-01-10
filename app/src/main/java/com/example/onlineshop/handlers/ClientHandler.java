@@ -7,9 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ClientHandler {
-
     private final Retrofit.Builder builder;
-
     private final Retrofit retrofit;
 
     public ClientHandler() {

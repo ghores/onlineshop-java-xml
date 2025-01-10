@@ -106,7 +106,7 @@ public class ProductsFragment extends Fragment {
     }
 
     private void fillProductCategoryData() {
-        ProductCategoryService.getAll(new Callback<ServiceResponse<ProductCategory>>() {
+        ProductCategoryService.getProductCategory(new Callback<ServiceResponse<ProductCategory>>() {
             @Override
             public void onResponse(Call<ServiceResponse<ProductCategory>> call, Response<ServiceResponse<ProductCategory>> response) {
                 if (response.isSuccessful() && response.body() != null && !response.body().isHasError()) {

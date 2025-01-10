@@ -10,10 +10,10 @@ import retrofit2.Callback;
 
 public class ProductCategoryService {
 
-    public static void getAll(Callback<ServiceResponse<ProductCategory>> callback) {
+    public static void getProductCategory(Callback<ServiceResponse<ProductCategory>> callback) {
         ClientHandler clientHandler = new ClientHandler();
         ProductCategoryClient client = clientHandler.getRetrofit().create(ProductCategoryClient.class);
-        Call<ServiceResponse<ProductCategory>> responseCall = client.get();
+        Call<ServiceResponse<ProductCategory>> responseCall = client.getProductCategory();
         responseCall.enqueue(callback);
     }
 }

@@ -8,5 +8,5 @@ import retrofit2.http.GET;
 
 public interface SliderClient {
     @GET("slider/")
-    Call<ServiceResponse<SliderItem>> get();
+    Call<ServiceResponse<SliderItem>> getSlider();
 }
