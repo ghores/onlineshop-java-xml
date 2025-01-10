@@ -49,7 +49,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
         //endregion
 
         //region product details
-        product = (Product) getIntent().getExtras().get("product");
+        if (getIntent().getExtras() != null) {
+            product = (Product) getIntent().getExtras().get("product");
+        }
         price.setText(product.getPrice() + "$");
         name.setText(product.getTitle());
         Picasso.get().load(ApiAddress.getFileUrl(product.getImage())).into(image);

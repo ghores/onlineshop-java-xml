@@ -3,7 +3,6 @@ package com.example.onlineshop.adapters;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.onlineshop.ProductDetailsActivity;
@@ -45,11 +43,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = dataList.get(position);
-
         TextView title = holder.title;
         ImageView image = holder.image;
         TextView price = holder.price;
-
         title.setText(product.getTitle());
         price.setText(product.getPrice() + "$");
         Picasso.get().load(ApiAddress.getFileUrl(product.getImage())).into(image);

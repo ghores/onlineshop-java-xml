@@ -50,7 +50,9 @@ public class ProductActivity extends AppCompatActivity {
 
     private void init() {
         bindViews();
-        category = (ProductCategory) Objects.requireNonNull(getIntent().getExtras()).get("category");
+        if (getIntent().getExtras()!=null) {
+            category = (ProductCategory)getIntent().getExtras().get("category");
+        }
         if (category != null) {
             name.setText(category.getTitle());
             Picasso.get().load(ApiAddress.getFileUrl(category.getImage())).into(image);

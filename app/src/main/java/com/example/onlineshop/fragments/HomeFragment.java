@@ -82,12 +82,29 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    private void fillProductCategoryData() {
+        ProductCategoryService.getAll(new Callback<ServiceResponse<ProductCategory>>() {
+            @Override
+            public void onResponse(Call<ServiceResponse<ProductCategory>> call, Response<ServiceResponse<ProductCategory>> response) {
+                if (response.isSuccessful() && response.body() != null && !response.body().isHasError()) {
+                    List<ProductCategory> productCategoryList = response.body().getDataList();
+                    mainRecyclerView.setAdapter(new ProductCategoryAdapter(productCategoryList, activity));
+                    mainRecyclerView.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ServiceResponse<ProductCategory>> call, Throwable t) {
+                Toast.makeText(activity, "Error on getting product categories data from server", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void fillNewProductData() {
         ProductService.getNew(new Callback<ServiceResponse<Product>>() {
             @Override
             public void onResponse(Call<ServiceResponse<Product>> call, Response<ServiceResponse<Product>> response) {
                 if (response.isSuccessful() && response.body() != null && !response.body().isHasError()) {
-
                     List<Product> productList = response.body().getDataList();
                     newProductsRecyclerView.setAdapter(new ProductAdapter(activity, productList));
                     newProductsRecyclerView.setLayoutManager(new GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false));
@@ -106,7 +123,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<ServiceResponse<Product>> call, Response<ServiceResponse<Product>> response) {
                 if (response.isSuccessful() && response.body() != null && !response.body().isHasError()) {
-
                     List<Product> popularList = response.body().getDataList();
                     popularProductRecyclerView.setAdapter(new ProductAdapter(activity, popularList));
                     popularProductRecyclerView.setLayoutManager(new GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false));
@@ -115,25 +131,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ServiceResponse<Product>> call, Throwable t) {
-                Toast.makeText(activity, "Error on getting product categories data from server", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void fillProductCategoryData() {
-        ProductCategoryService.getAll(new Callback<ServiceResponse<ProductCategory>>() {
-            @Override
-            public void onResponse(Call<ServiceResponse<ProductCategory>> call, Response<ServiceResponse<ProductCategory>> response) {
-                if (response.isSuccessful() && response.body() != null && !response.body().isHasError()) {
-
-                    List<ProductCategory> productCategoryList = response.body().getDataList();
-                    mainRecyclerView.setAdapter(new ProductCategoryAdapter(productCategoryList, activity));
-                    mainRecyclerView.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ServiceResponse<ProductCategory>> call, Throwable t) {
                 Toast.makeText(activity, "Error on getting product categories data from server", Toast.LENGTH_SHORT).show();
             }
         });

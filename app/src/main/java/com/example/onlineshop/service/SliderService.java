@@ -11,7 +11,6 @@ import retrofit2.Callback;
 public class SliderService {
 
     public static void getAll(Callback<ServiceResponse<SliderItem>> callback) {
-
         ClientHandler clientHandler = new ClientHandler();
         SliderClient sliderClient = clientHandler.getRetrofit().create(SliderClient.class);
         Call<ServiceResponse<SliderItem>> responseCall = sliderClient.get();
