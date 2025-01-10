@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.onlineshop.R;
 import com.example.onlineshop.adapters.CardAdapter;
-import com.example.onlineshop.adapters.ProductCategoryAdapter;
 import com.example.onlineshop.handlers.CardDBHandler;
 import com.example.onlineshop.models.CardItem;
 

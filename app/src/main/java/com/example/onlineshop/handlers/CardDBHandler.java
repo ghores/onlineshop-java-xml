@@ -85,7 +85,6 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
 
     public CardItem addToBasket(CardItem data) {
         CardItem oldData = getDataByDetail(data.getProduct().getId(), data.getSize() != null ? data.getSize().getId() : 0, data.getColor() != null ? data.getColor().getId() : 0);
-
         if (oldData == null) {
             ContentValues values = new ContentValues();
             values.put(CardItem.KEY_PRODUCT, data.getProduct().getId());
@@ -124,11 +123,11 @@ public class CardDBHandler extends BaseDBHandler<CardItem> {
             cursor.moveToNext();
         }
 
-        if (cursor.getCount() == 0)
+        if (cursor.getCount() == 0) {
             return new ArrayList<>();
+        }
 
         List<CardItem> result = new ArrayList<>();
-
         do {
             result.add(new CardItem(cursor));
         } while (cursor.moveToNext());

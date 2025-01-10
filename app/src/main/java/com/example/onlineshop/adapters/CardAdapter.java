@@ -20,7 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
+public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
 
     private final List<CardItem> dataList;
     private final Activity activity;
@@ -32,21 +32,18 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-
         View view = layoutInflater.inflate(R.layout.card_item_layout, parent, false);
-        return new ViewHolder(view);
-
+        return new CardViewHolder(view);
     }
 
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
         CardItem cardItem = dataList.get(position);
-
         TextView name = holder.name;
         TextView price = holder.price;
         TextView quantity = holder.quantity;
@@ -58,12 +55,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         if (cardItem.getColor() != null) {
             productTitle += " ( " + cardItem.getColor().getName() + " )";
         }
-
         name.setText(productTitle);
         Picasso.get().load(ApiAddress.getFileUrl(cardItem.getProduct().getImage())).into(holder.image);
         price.setText(cardItem.getProduct().getPrice() + "$");
         quantity.setText(String.valueOf(cardItem.getQuantity()));
-
     }
 
     @Override
@@ -71,12 +66,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return dataList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class CardViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView image;
         public TextView name, price, quantity;
 
-        public ViewHolder(@NonNull View itemView) {
+        public CardViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.product_image);
             name = itemView.findViewById(R.id.product_name);

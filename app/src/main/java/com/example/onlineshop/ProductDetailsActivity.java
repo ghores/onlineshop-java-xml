@@ -118,7 +118,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     Toast.makeText(ProductDetailsActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 finish();
-                ProductDetailsActivity.this.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }
         });
         //endregion
