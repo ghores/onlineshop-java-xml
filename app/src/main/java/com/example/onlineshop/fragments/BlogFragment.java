@@ -38,7 +38,7 @@ public class BlogFragment extends Fragment {
     private List<Blog> dataList;
     private ProgressBar progressBar;
     private NestedScrollView nestedScrollView;
-    private int pageNumber = 0, pageSize = 2;
+    private int pageNumber = 0, pageSize = 10;
 
     public BlogFragment(Activity activity) {
         this.activity = activity;

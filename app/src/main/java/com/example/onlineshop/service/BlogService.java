@@ -15,4 +15,11 @@ public class BlogService {
         Call<ServiceResponse<Blog>> blogResponse = blogClient.getBlog(pageNumber, pageSize);
         blogResponse.enqueue(callback);
     }
+
+    public static void getIncreaseVisitCount(Callback<ServiceResponse<Blog>> callback, long id) {
+        ClientHandler clientHandler = new ClientHandler();
+        BlogClient blogClient = clientHandler.getRetrofit().create(BlogClient.class);
+        Call<ServiceResponse<Blog>> blogResponse = blogClient.getIncreaseVisitCount(id);
+        blogResponse.enqueue(callback);
+    }
 }
